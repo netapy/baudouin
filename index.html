@@ -10,45 +10,33 @@
     <div id="content"></div>
 
     <script>
-        function convertWikilinksToHref(text) {
-            return text.replace(/\[\[(.*?)\]\]/g, (match, p1) => {
-                const [filename, alias] = p1.split('|');
-                return `<a href="${filename}" class="wikilink">${alias || filename}</a>`;
-            });
-        }
-
-        function loadContent(url, pushState = true) {
+        function loadContent(url = 'index', pushState = true) {
             fetch(`public/${url}.md`)
                 .then(response => response.text())
                 .then(text => {
-                    const convertedText = convertWikilinksToHref(marked.parse(text));
-                    document.getElementById('content').innerHTML = convertedText;
-                    attachLinkListeners();
-                    if (pushState) {
-                        history.pushState({ url: url }, '', `#${url}`);
-                    }
+                    const content = marked.parse(text).replace(/\[\[(.*?)\]\]/g, 
+                        (_, p1) => `<a href="#${p1.split('|')[0]}" class="wikilink">${p1.split('|').pop()}</a>`);
+                    document.getElementById('content').innerHTML = content;
+                    if (pushState) history.pushState({url}, '', `#${url}`);
                     document.title = `Baudouin - ${url}`;
                 });
         }
 
-        function attachLinkListeners() {
-            document.querySelectorAll('.wikilink').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    loadContent(this.getAttribute('href'));
-                });
-            });
+        function handleNavigation(url, pushState = true) {
+            loadContent(url, pushState);
         }
 
-        window.addEventListener('popstate', function(e) {
-            if (e.state && e.state.url) {
-                loadContent(e.state.url, false);
+        document.body.addEventListener('click', e => {
+            if (e.target.classList.contains('wikilink')) {
+                e.preventDefault();
+                handleNavigation(e.target.getAttribute('href').slice(1));
             }
         });
 
-        // Initial load
-        const initialPage = window.location.hash.slice(1) || 'index';
-        loadContent(initialPage, false);
+        window.addEventListener('popstate', () => handleNavigation(location.hash.slice(1) || 'index', false));
+        window.addEventListener('hashchange', () => handleNavigation(location.hash.slice(1) || 'index', false));
+
+        handleNavigation(location.hash.slice(1) || 'index', false);
     </script>
 </body>
 </html>
