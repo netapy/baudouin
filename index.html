@@ -11,19 +11,23 @@
 
     <script>
         function convertWikilinksToHref(text) {
-          return text.replace(/\[\[(.*?)\]\]/g, (match, p1) => {
-            const [filename, alias] = p1.split('|');
-            return `<a href="public/${filename}.md" class="wikilink">${alias || filename}</a>`;
-          });
+            return text.replace(/\[\[(.*?)\]\]/g, (match, p1) => {
+                const [filename, alias] = p1.split('|');
+                return `<a href="${filename}" class="wikilink">${alias || filename}</a>`;
+            });
         }
 
-        function loadContent(url) {
-            fetch(url)
+        function loadContent(url, pushState = true) {
+            fetch(`public/${url}.md`)
                 .then(response => response.text())
                 .then(text => {
                     const convertedText = convertWikilinksToHref(marked.parse(text));
                     document.getElementById('content').innerHTML = convertedText;
                     attachLinkListeners();
+                    if (pushState) {
+                        history.pushState({ url: url }, '', `#${url}`);
+                    }
+                    document.title = `Baudouin - ${url}`;
                 });
         }
 
@@ -36,7 +40,15 @@
             });
         }
 
-        loadContent('public/index.md');
+        window.addEventListener('popstate', function(e) {
+            if (e.state && e.state.url) {
+                loadContent(e.state.url, false);
+            }
+        });
+
+        // Initial load
+        const initialPage = window.location.hash.slice(1) || 'index';
+        loadContent(initialPage, false);
     </script>
 </body>
 </html>
