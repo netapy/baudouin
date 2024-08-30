@@ -1,0 +1,2 @@
+- Si on croit en une probabilité de 30% de chance qu'il va pleuvoir, il faut aussi croire en une probabilité de 70 % de chances qu'il ne pleuve pas. 
+- 

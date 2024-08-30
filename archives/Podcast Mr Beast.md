@@ -1,0 +1,2 @@
+- l'entourage est un multiplicateur de succès
+	- Il faut s'entourer e gens qui font la me
