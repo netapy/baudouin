@@ -1,5 +1,0 @@
----
-Obtenu: false
-tags:
-  - Vinyle
----

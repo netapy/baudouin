@@ -1,9 +1,0 @@
-{
-	"nodes":[
-		{"id":"ca08ff6dd7a0f6ca","type":"text","text":"Tac","x":-94,"y":-200,"width":250,"height":60},
-		{"id":"a4fc90713a9751dd","type":"text","text":"Tic","x":-380,"y":40,"width":250,"height":60}
-	],
-	"edges":[
-		{"id":"895327633bcdcd22","fromNode":"a4fc90713a9751dd","fromSide":"right","toNode":"ca08ff6dd7a0f6ca","toSide":"left"}
-	]
-}
