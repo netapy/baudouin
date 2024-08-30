@@ -10,11 +10,33 @@
     <div id="content"></div>
 
     <script>
-        fetch('public/index.md')
-            .then(response => response.text())
-            .then(text => {
-                document.getElementById('content').innerHTML = marked.parse(text);
+        function convertWikilinksToHref(text) {
+          return text.replace(/\[\[(.*?)\]\]/g, (match, p1) => {
+            const [filename, alias] = p1.split('|');
+            return `<a href="public/${filename}.md" class="wikilink">${alias || filename}</a>`;
+          });
+        }
+
+        function loadContent(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(text => {
+                    const convertedText = convertWikilinksToHref(marked.parse(text));
+                    document.getElementById('content').innerHTML = convertedText;
+                    attachLinkListeners();
+                });
+        }
+
+        function attachLinkListeners() {
+            document.querySelectorAll('.wikilink').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    loadContent(this.getAttribute('href'));
+                });
             });
+        }
+
+        loadContent('public/index.md');
     </script>
 </body>
 </html>
