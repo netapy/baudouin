@@ -4,43 +4,39 @@
   box-sizing: border-box;
 }
 
-/* Body styles */
 body {
   font-family: 'Times New Roman', Times, serif;
-  line-height: 1.5;
-  color: #111111;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 5px;
-  background-color: #ffffff;
+  line-height: 1.2;
+  color: black;
+  max-width: 800px;
+  margin: 8px auto;
+  background-color: white;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  font-weight: bold;
 }
 
-h1 { font-size: 2.2em; }
-h2 { font-size: 1.8em; }
-h3 { font-size: 1.5em; }
-h4 { font-size: 1.3em; }
-h5 { font-size: 1.1em; }
-h6 { font-size: 1em; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1em; }
+h5 { font-size: 0.83em; }
+h6 { font-size: 0.67em; }
 
 /* Paragraphs */
 p {
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 
-/* Unordered lists */
-ul {
-  margin-left: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-li {
-  margin-bottom: 0.5em;
+ul, ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 40px;
 }
 
 /* Links */
