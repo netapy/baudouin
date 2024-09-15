@@ -48,11 +48,6 @@
 - Developed automation software using Python and JavaScript
 - Applied advanced consulting methodologies for analysis and presentation
 
-### Nicolas — Store Manager
-*July - August 2017 | Paris, FR*
-
-- Autonomously managed store operations: inventory, finances, organization
-- Drove sales and customer relations, achieving €13k in revenue
 
 ---
 
