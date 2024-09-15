@@ -4,7 +4,7 @@
 
 **Works**  
 [Ordalie](https://ordalie.com) — Legal AI  
-[Banquise](https://banquise.ai) — WIP, stand-by  
+[Banquise](https://banquise.app) — WIP, stand-by  
 
 
 **Writing**  
