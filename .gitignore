@@ -1,8 +1,0 @@
-*
-
-!.gitignore
-!.gitattributes
-
-!public/
-!public/**
-!index.md
