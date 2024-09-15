@@ -9,7 +9,8 @@ body {
   line-height: 1.2;
   color: black;
   max-width: 800px;
-  margin: 8px auto;
+  margin: auto;
+  padding: 8px;
   background-color: white;
 }
 
