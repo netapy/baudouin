@@ -1,2 +1,2 @@
 ###  Baudouin Arbarétier
-[cv](cv)
+[[cv]]
