@@ -2,13 +2,7 @@
 Première page : [[ordalie_updates]]
 
 
-> Baudouin
+
+*Site en construction*
 
 
-----------
-
-
-Test
-
-
------ 
