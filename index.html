@@ -14,11 +14,11 @@
             fetch(`${url}.md`)
                 .then(response => response.text())
                 .then(text => {
-                    const content = marked.parse(text).replace(/\[\[(.*?)\]\]/g, 
-                        (_, p1) => `<a href="#${p1.split('|')[0]}" class="wikilink">${p1.split('|').pop()}</a>`);
+                    const content = marked.parse(text);
                     document.getElementById('content').innerHTML = content;
                     if (pushState) history.pushState({url}, '', `#${url}`);
                     document.title = `Baudouin - ${url}`;
+                    adjustInternalLinks();
                 });
         }
 
@@ -26,12 +26,18 @@
             loadContent(url, pushState);
         }
 
-        document.body.addEventListener('click', e => {
-            if (e.target.classList.contains('wikilink')) {
-                e.preventDefault();
-                handleNavigation(e.target.getAttribute('href').slice(1));
-            }
-        });
+        function adjustInternalLinks() {
+            document.querySelectorAll('#content a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && !href.startsWith('http') && !href.startsWith('#')) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const newUrl = href.replace(/\.md$/, ''); // Remove .md if it exists
+                        handleNavigation(newUrl);
+                    });
+                }
+            });
+        }
 
         window.addEventListener('popstate', () => handleNavigation(location.hash.slice(1) || 'index', false));
         window.addEventListener('hashchange', () => handleNavigation(location.hash.slice(1) || 'index', false));
