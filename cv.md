@@ -16,7 +16,10 @@
 ### Banquise — Founder & CTO
 *February 2019 - Present (on hold) | Paris, FR*
 
-- Pioneered development of a no-code game editor for web and native apps
+-  Contributed to open-source no-code game editor development
+- Built web app and native mobile app
+- Developed full-featured Go server  
+- Grew user base to 350 monthly active users and 2,000+ downloads
 
 ### DXC Technology — Public Sector Consultant
 *January 2020 - January 2022 | Paris, FR*
