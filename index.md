@@ -1,5 +1,6 @@
 # Baudouin Arbarétier
-Première page : [[ordalie_updates]]
+[cv](cv)
+
 
 
 
