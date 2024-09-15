@@ -1,9 +1,2 @@
-# Baudouin Arbarétier
+###  Baudouin Arbarétier
 [cv](cv)
-
-
-
-
-*Site en construction*
-
-
