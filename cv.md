@@ -5,8 +5,15 @@
 
 ## Professional Experience
 
+### Freelance Full-Stack Developer & AI Specialist
+*January 2021 - August 2023 | Paris, FR*
+
+- Collaborated with multiple startups (including *Odace*) to develop robust full-stack web applications
+- Designed and implemented AI systems – recommendation systems and user features
+- Managed end-to-end project lifecycles, from requirement gathering to deployment and maintenance
+
 ### Rétine/Je te vois — Founder & CTO
-*July 2019 - August 2021 | Paris, FR*
+*July 2019 - August 2022 | Paris, FR*
 
 - Spearheaded full-stack development of an AI-powered online survey platform (pre-ChatGPT era)
 - Engineered and trained AI models for emotion/sentiment analysis and clustering
