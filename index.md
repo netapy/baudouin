@@ -1,5 +1,8 @@
+---
+share: "true"
+---
 # Baudouin Arbarétier
-([X](https://x.com/b_arbaretier) / [E-mail](mailto:baudouin@ordalie.com))
+[X](https://x.com/b_arbaretier) / [E-mail](mailto:baudouin@ordalie.com)
 
 
 **Works**  
