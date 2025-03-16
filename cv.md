@@ -1,3 +1,6 @@
+---
+share: "true"
+---
 # Baudouin Arbarétier
 b.arbaretier@outlook.fr | (+33) 7 70 45 58 45 | Paris, France
 
