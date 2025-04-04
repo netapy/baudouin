@@ -1,0 +1,7 @@
+<script>
+	const params = new URLSearchParams(window.location.search);
+	const email = params.get('email') || 'default@example.com'; // Fallback if no email param
+	const subject = params.get('subject') || 'Ordalie';
+	const body = params.get('body') || '...';
+	window.location = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+</script>
